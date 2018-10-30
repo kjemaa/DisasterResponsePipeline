@@ -26,7 +26,10 @@ import re
 
 
 def load_data(database_filepath):
-    """
+    """ load data from sqlite database and split into features and targets
+    Input:  filepath of the database 
+    Output: features(X), targets(Y) and category names
+    
     """
     engine = create_engine('sqlite:///' + database_filepath)
     df = pd.read_sql_table ('DisasterResponse', con=engine)
@@ -36,7 +39,9 @@ def load_data(database_filepath):
     return X,Y, category_names
 
 def tokenize(text):
-    """
+    """process text, tokenize, remove stopwords and reduces words to their root form
+    Input: text to tokenize
+    Output: cleaned words
     """
     text = re.sub(r"[^a-zA-Z0-9]", " ", text.lower())
     #Tokenize
@@ -50,6 +55,13 @@ def tokenize(text):
 
 
 def build_model():
+                  """Build model for classification of messages, 
+                  Steps: 
+                  - Build a machine learning pipeline 
+                  - Performa grid search 
+                  - Build model with optimized parameters
+                  output: model
+                  """
                   pipeline = Pipeline([
                     ('vect', CountVectorizer(tokenizer=tokenize)),
                     ('tfidf', TfidfTransformer()),
@@ -65,10 +77,17 @@ def build_model():
                   return model 
                   
 def evaluate_model(model, X_test, Y_test, category_names):
+                """evaluate model against test-set with classification report
+                Input: trained model (model), test features (X_test), test targets (Y_test), categories (category_names)
+                Output: classification report with precision, recall, f1_score and support metrics
+                """
                   Y_pred = model.predict(X_test)
                   print(classification_report(Y_test, Y_pred, target_names=category_names, digits=2))
 
 def save_model(model, model_filepath):
+    """save model to pickle file
+    input: trained model (model), filepath to save pickle file 
+    """
     with open(model_filepath, 'wb') as pkl_file:
                   pickle.dump(model, pkl_file)
     pkl_file.close()
