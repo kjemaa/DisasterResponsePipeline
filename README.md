@@ -47,4 +47,4 @@ Udacity project: Analyze disaster data fro Figure Eight and build a model for an
 |- classifier.pkl # saved mode
 
 
-- l - README.md
+|- README.md
