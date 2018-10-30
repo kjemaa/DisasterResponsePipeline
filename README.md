@@ -22,20 +22,34 @@ Udacity project: Analyze disaster data fro Figure Eight and build a model for an
 - app
 
 
-- app 
-| - template 
+
+
+
+
+> Written with [StackEdit](https://stackedit.io/).
+
+**app** 
+| - template
+ 
 | |- master.html # main page of web app 
+
 | |- go.html # classification result page of web app
+
 |- run.py # Flask file that runs app 
 
-- data
+**data**
 |- disaster_categories.csv # data to process 
+
 |- disaster_messages.csv # data to process 
-|- process_data.py 
+
+|- process_data.py
+ 
 |- DisasterResponse.db # database to save clean data to 
 
-- models 
+**models** 
+
 |- train_classifier.py 
+
 |- classifier.pkl # saved mode
 
 - l - README.md
