@@ -19,16 +19,9 @@ Udacity project: Analyze disaster data fro Figure Eight and build a model for an
 
 ### File structure:
  Here's the file structure of the project:
-- app
-
-
-
-
-
-
-> Written with [StackEdit](https://stackedit.io/).
 
 **app** 
+
 | - template
  
 | |- master.html # main page of web app 
@@ -38,6 +31,7 @@ Udacity project: Analyze disaster data fro Figure Eight and build a model for an
 |- run.py # Flask file that runs app 
 
 **data**
+
 |- disaster_categories.csv # data to process 
 
 |- disaster_messages.csv # data to process 
@@ -51,5 +45,6 @@ Udacity project: Analyze disaster data fro Figure Eight and build a model for an
 |- train_classifier.py 
 
 |- classifier.pkl # saved mode
+
 
 - l - README.md
