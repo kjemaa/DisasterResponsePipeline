@@ -2,9 +2,9 @@
 Udacity project: Analyze disaster data fro Figure Eight and build a model for an API that classifies disaster messages.
 
 ### Installations
-Python 3.7
+The project has been conducted in the Udacity workspace environment provided. 
 
-libraries: 
+Following libraries were used (preinstalled):
 - pandas
 - numpy
 - nltk
@@ -12,7 +12,6 @@ libraries:
 - sqlalchemy
 - pickle
 - re
-
 
 
 ### Project components: 
@@ -84,18 +83,19 @@ The project consists of three components
 |- README.md
 
 
-### Resources
+### Acknowledgements
 - Data has been provided by Figure Eight
 
-- sklearn tutorials
+- Tutorials from plotly, Pandas, Sklearn were used developing the code:
 
-http://scikit-learn.org/stable/modules/model_evaluation.html#classification-report
+    - http://pandas.pydata.org/
+    - http://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
+    - http://scikit-learn.org/stable/modules/model_evaluation.html#classification-report
+    - http://scikit-learn.org/stable/modules/classes.html#module-sklearn.ensemble
 
-http://scikit-learn.org/stable/modules/classes.html#module-sklearn.ensemble
-
-- pandas tutorials
-
-http://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
+Along with lessons in the Udacity Data Science Nanodegree
+- Software engineering
+- Data engineering
 
 
 
