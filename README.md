@@ -1,6 +1,30 @@
 # Disaster Response Pipeline
 Udacity project: Analyze disaster data fro Figure Eight and build a model for an API that classifies disaster messages.
 
+### Installations
+
+
+
+### Project components: 
+The project consists of three components
+
+**1. ETL Pipeline**
+- Loads the messages and categories datasets
+- Merges the two datasets
+- Cleans the data 
+- Stores it in a SQLite database
+
+**2. ML Pipeline**
+- Loads data from the SQLite database
+- Splits the dataset into training and test sets
+- Builds a text processing and machine learning pipeline
+- Trains and tunes a model using GridSearchCV
+- Outputs results on the test set
+- Exports the final model as a pickle file
+
+**3. Flask web app**
+- categorize new messages
+- visualisations of the training set genres and categories
 
 
 ### Instructions:
@@ -48,3 +72,17 @@ Udacity project: Analyze disaster data fro Figure Eight and build a model for an
 
 
 |- README.md
+
+
+### Resources
+- Data has been provided by Figure Eight
+
+- sklearn tutorials
+http://scikit-learn.org/stable/modules/model_evaluation.html#classification-report
+http://scikit-learn.org/stable/modules/classes.html#module-sklearn.ensemble
+
+- pandas tutorials
+http://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
+
+
+
