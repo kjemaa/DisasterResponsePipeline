@@ -93,9 +93,9 @@ The project consists of three components
     - http://scikit-learn.org/stable/modules/model_evaluation.html#classification-report
     - http://scikit-learn.org/stable/modules/classes.html#module-sklearn.ensemble
 
-Along with lessons in the Udacity Data Science Nanodegree
-- Software engineering
-- Data engineering
+- Along with lessons in the Udacity Data Science Nanodegree
+    - Software engineering
+    - Data engineering
 
 
 
