@@ -33,7 +33,7 @@ The project consists of three components
 
 **3. Flask web app**
 - categorize new messages
-- visualisations of the training set genres and categories
+- visualisations of the training set genres, categories and social media categories. 
 
 
 ### Instructions:
