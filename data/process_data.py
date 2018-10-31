@@ -6,9 +6,9 @@ from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
    """ load message and categories file, merge and store in a dataframe
-   Args:
+   Input:
    messages.csv and categories.csv filepath
-   Returns:
+   Output:
    merged dataframe
    """
    messages = pd.read_csv(messages_filepath, delimiter=",", encoding = 'utf-8')
@@ -18,10 +18,10 @@ def load_data(messages_filepath, categories_filepath):
 
 def clean_data(df):
     """ clean the merged dataframe. 
-    Args:
+    Input:
     merged dataframe
-    Returns: 
-    dataframe of messages with categories as column names, without duplicates
+    Output: 
+    dataframe with messages, categories as column names and without duplicates
     """
     categories = df['categories'].str.split(";", expand=True)
     row = categories.iloc[0]
@@ -40,19 +40,19 @@ def clean_data(df):
     df = pd.concat([df, categories], axis=1)
     # drop duplicates
     df.drop_duplicates(inplace=True)
-    
-    df = df[~(df.isnull().any(axis=1))|
-        ((df.original.isnull())&~(df.offer.isnull()))]
+    # remove nans based on original column (high number of nans)
+    df = df[~(df.isnull().any(axis=1))|(df.original.isnull())]
     
     return df
     
 def save_data(df, database_filename):
     
     """ save the cleaned dataframe to a sql database. 
-    Args:
-    cleaned dataframe
-    Returns: 
-    saves a database in the data folder
+    Input:
+    df: cleaned dataframe
+    database_filename: your given filename
+    Output: 
+    saved database in the data folder
     """
     engine = create_engine('sqlite:///' + database_filename)
     df.to_sql('DisasterResponse', engine, if_exists='replace', index=False)

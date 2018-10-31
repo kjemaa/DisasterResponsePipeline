@@ -70,7 +70,7 @@ def build_model():
                   
                   parameters = {
                     'vect__min_df':[1,10,50],
-                    'vect__lowercase': [True, False],
+                    'clf__estimator__learning_rate': [0.001, 0.01, 0.1],
                     'tfidf__smooth_idf': [True, False]
                     }
                   model  = GridSearchCV(pipeline, param_grid=parameters, cv=2) 
@@ -81,8 +81,8 @@ def evaluate_model(model, X_test, Y_test, category_names):
                 Input: trained model (model), test features (X_test), test targets (Y_test), categories (category_names)
                 Output: classification report with precision, recall, f1_score and support metrics
                 """
-                  Y_pred = model.predict(X_test)
-                  print(classification_report(Y_test, Y_pred, target_names=category_names, digits=2))
+                Y_pred = model.predict(X_test)
+                print(classification_report(Y_test, Y_pred, target_names=category_names, digits=2))
 
 def save_model(model, model_filepath):
     """save model to pickle file

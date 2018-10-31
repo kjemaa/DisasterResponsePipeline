@@ -4,6 +4,7 @@ import pandas as pd
 import re
 
 import nltk
+nltk.download(['punkt', 'wordnet', 'stopwords'])
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
@@ -58,8 +59,10 @@ def index():
     category_counts= df.drop(['id','message','original','genre'], axis=1).sum().sort_values(ascending=False)
     category_names= list(category_counts.index)[0:10]
     
-    #frequent words:
-        
+    #social media categories
+    social = df[df['genre'] == 'social']   
+    social_counts = social.drop(['id','message','original','genre'], axis=1).sum().sort_values(ascending=False)
+    social_cat = list(social_counts.index)[0:10]
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
@@ -91,6 +94,24 @@ def index():
 
             'layout': {
                 'title': 'Distribution of top 10 Message Categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "category"
+                }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=social_cat,
+                    y=social_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'Social Media - Distribution of top 10 Message Categories',
                 'yaxis': {
                     'title': "Count"
                 },
