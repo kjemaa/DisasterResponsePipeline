@@ -88,7 +88,7 @@ The project consists of three components
 ### Acknowledgements
 - Data has been provided by Figure Eight
 
-- Tutorials from plotly, Pandas, Sklearn were used developing the code:
+- Tutorials from Pandas and Sklearn were used developing the code:
 
     - http://pandas.pydata.org/
     - http://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
